@@ -72,15 +72,45 @@ export function Teams() {
   const [emblaRef, embla] = useEmblaCarousel({ loop: true, align: "start", dragFree: false });
   const [index, setIndex] = useState(0);
 
+  const hexToHsl = (hex: string) => {
+    const res = hex.replace('#','');
+    const bigint = parseInt(res.length === 3 ? res.split('').map(c=>c+c).join('') : res, 16);
+    const r = (bigint >> 16) & 255, g = (bigint >> 8) & 255, b = bigint & 255;
+    const r1 = r/255, g1 = g/255, b1 = b/255;
+    const max = Math.max(r1,g1,b1), min = Math.min(r1,g1,b1);
+    let h = 0, s = 0, l = (max+min)/2;
+    if (max !== min) {
+      const d = max-min;
+      s = l > .5 ? d/(2-max-min) : d/(max+min);
+      switch(max){
+        case r1: h = (g1-b1)/d + (g1 < b1 ? 6 : 0); break;
+        case g1: h = (b1-r1)/d + 2; break;
+        case b1: h = (r1-g1)/d + 4; break;
+      }
+      h /= 6;
+    }
+    return `${Math.round(h*360)} ${Math.round(s*100)}% ${Math.round(l*100)}%`;
+  };
+
+  const applyTheme = (colorHex: string) => {
+    const hsl = hexToHsl(colorHex);
+    const root = document.documentElement;
+    root.style.setProperty('--primary', hsl);
+    root.style.setProperty('--ring', hsl);
+  };
+
   const onSelect = useCallback(() => {
     if (!embla) return;
-    setIndex(embla.selectedScrollSnap());
+    const i = embla.selectedScrollSnap();
+    setIndex(i);
+    applyTheme(TEAMS[i % TEAMS.length].theme);
   }, [embla]);
 
   useEffect(() => {
     if (!embla) return;
     embla.on("select", onSelect);
     onSelect();
+    // cleanup not strictly necessary, theme persists
   }, [embla, onSelect]);
 
   const theme = TEAMS[index % TEAMS.length];
