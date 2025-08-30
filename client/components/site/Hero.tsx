@@ -30,11 +30,11 @@ export function Hero() {
             A premium, cinematic showcase of teams, tracks and technology — fusing the elegance of future design with the raw speed of motorsport.
           </p>
           <div className="mt-10 flex flex-wrap gap-3">
-            <a href="#teams" className="glass metal inline-flex items-center gap-2 px-5 py-3 text-sm font-semibold uppercase tracking-wider border-primary/40 hover:border-primary transition-colors">
-              Explore Teams →
+            <a href="#teams" className="btn-primary">
+              Teams →
             </a>
-            <a href="#tracks" className="inline-flex items-center gap-2 px-5 py-3 text-sm font-semibold uppercase tracking-wider border border-white/10 rounded-xl hover:border-white/20 transition-colors">
-              Iconic Tracks →
+            <a href="#tracks" className="btn-outline">
+              Tracks →
             </a>
           </div>
         </div>
