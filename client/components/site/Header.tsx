@@ -8,7 +8,8 @@ export function Header() {
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
-    return () => { document.body.style.overflow = ""; };
+    document.body.classList.toggle("glide", open);
+    return () => { document.body.style.overflow = ""; document.body.classList.remove("glide"); };
   }, [open]);
 
   const NavLinks = ({ onClick }: { onClick?: () => void }) => (
@@ -20,13 +21,13 @@ export function Header() {
   );
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-black/60 backdrop-blur-xl">
-      <div className="container flex items-center justify-between py-3">
+    <header className="fixed top-0 z-50 w-full bg-transparent">
+      <div className="container flex items-center justify-between py-4">
         <a href="#top" className="flex items-center gap-3">
           <img src={LOGO_URL} alt="F1" className="h-7 w-auto"/>
           <span className="sr-only">F1 Showcase</span>
         </a>
-        <button aria-label="Menu" className="inline-flex items-center justify-center w-10 h-10 rounded-md border border-white/10 hover:border-white/20 transition-colors" onClick={() => setOpen(true)}>
+        <button aria-label="Menu" className="inline-flex items-center justify-center w-10 h-10 rounded-md border border-white/0 hover:border-white/10 transition-colors" onClick={() => setOpen(true)}>
           <span className="block w-5 h-0.5 bg-white"></span>
           <span className="block w-5 h-0.5 bg-white my-1"></span>
           <span className="block w-5 h-0.5 bg-white"></span>
