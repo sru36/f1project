@@ -112,13 +112,15 @@ html { scroll-behavior: smooth; }
   .glass { @apply bg-white/5 backdrop-blur-md border border-white/10 shadow-[0_0_0_1px_rgba(255,255,255,0.06)] rounded-xl; }
   .metal { background: linear-gradient(120deg, rgba(255,255,255,0.12), rgba(255,255,255,0.02) 30%, rgba(255,255,255,0.15) 60%, rgba(255,255,255,0.02)); background-size: 400px 100%; }
 
-  .btn { @apply inline-flex items-center justify-center rounded-xl px-5 py-3 text-sm font-semibold uppercase tracking-wider transition-all duration-300; font-family: "Braven", Inter, system-ui, sans-serif; }
-  .btn-primary { @apply btn border border-primary/40 text-white; box-shadow: 0 10px 30px hsla(var(--primary),0.25); }
-  .btn-primary:hover { @apply border-primary; transform: translateY(-1px); }
-  .btn-outline { @apply btn border border-white/10 text-white; }
-  .btn-outline:hover { @apply border-white/20; transform: translateY(-1px); }
+  /* Uiverse-style button */
+  .uiverse-btn { position: relative; display: inline-block; padding: 15px 30px; border: 2px solid #fefefe; text-transform: uppercase; color: #fefefe; text-decoration: none; font-weight: 600; font-size: 20px; background: transparent; }
+  .uiverse-btn::before { content: ""; position: absolute; top: 6px; left: -2px; width: calc(100% + 4px); height: calc(100% - 12px); background-color: #212121; transition: transform .3s ease-in-out; transform: scaleY(1); transform-origin: center; }
+  .uiverse-btn:hover::before { transform: scaleY(0); }
+  .uiverse-btn::after { content: ""; position: absolute; left: 6px; top: -2px; height: calc(100% + 4px); width: calc(100% - 12px); background-color: #212121; transition: transform .3s ease-in-out .5s; transform: scaleX(1); transform-origin: center; }
+  .uiverse-btn:hover::after { transform: scaleX(0); }
+  .uiverse-btn > span { position: relative; z-index: 3; }
 }
 
-/* Glide whole page when drawer opens */
+/* Glide whole page when drawer opens (kept for future drawers) */
 .app-frame { transition: transform .55s cubic-bezier(.22,.61,.36,1); will-change: transform; }
 body.glide .app-frame { transform: translateX(-36px); }
