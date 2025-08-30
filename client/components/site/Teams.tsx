@@ -91,13 +91,14 @@ export function Teams() {
       title={<span>Teams</span>}
       subtitle={<span>Swipe to explore each team. The theme adapts to the team colors.</span>}
     >
-      <div
-        className="relative rounded-2xl overflow-hidden border border-white/10"
-        style={{
-          background:
-            `radial-gradient(800px 200px at 10% -10%, ${theme.theme}22, transparent), radial-gradient(600px 200px at 110% 120%, ${theme.theme}22, transparent)`,
-        }}
-      >
+      <div className="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
+        <div
+          className="relative rounded-2xl overflow-hidden border border-white/10"
+          style={{
+            background:
+              `radial-gradient(800px 200px at 10% -10%, ${theme.theme}22, transparent), radial-gradient(600px 200px at 110% 120%, ${theme.theme}22, transparent)`,
+          }}
+        >
         <div className="p-4 md:p-6 flex items-center justify-between">
           <div className="flex gap-2">
             {TEAMS.map((t, i) => (
@@ -129,7 +130,7 @@ export function Teams() {
         <div ref={emblaRef} className="overflow-hidden">
           <div className="flex">
             {TEAMS.map((t) => (
-              <div className="min-w-0 flex-[0_0_100%] md:flex-[0_0_80%] px-4 md:px-6" key={t.key}>
+              <div className="min-w-0 flex-[0_0_100%] px-4 md:px-6" key={t.key}>
                 <article className="relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-white/[0.03] p-6">
                   <header className="flex items-center justify-between">
                     <h3 className="font-f1 text-2xl md:text-3xl" style={{ color: t.theme }}>
@@ -169,6 +170,7 @@ export function Teams() {
               </div>
             ))}
           </div>
+        </div>
         </div>
       </div>
     </Section>
