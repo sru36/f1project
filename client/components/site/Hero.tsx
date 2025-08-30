@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 
-const LOGO_URL = "https://cdn.builder.io/api/v1/image/assets%2F0d68dce6c99045fc980ec4bed2ae11cf%2F0fc2557771c149278e9429c5d557520d?format=webp&width=800";
+const LOGO_URL = "https://cdn.builder.io/api/v1/image/assets%2F0d68dce6c99045fc980ec4bed2ae11cf%2Ffa4676227ecb4b2e8d2d1df83933299e?format=webp&width=800";
 
 export function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);

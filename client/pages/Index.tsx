@@ -1,7 +1,7 @@
 import { Hero } from "@/components/site/Hero";
 import { Teams } from "@/components/site/Teams";
 import { Tracks } from "@/components/site/Tracks";
-import { Technology } from "@/components/site/Technology";
+import { TyreType } from "@/components/site/Technology";
 
 export default function Index() {
   return (
@@ -9,7 +9,7 @@ export default function Index() {
       <Hero />
       <Teams />
       <Tracks />
-      <Technology />
+      <TyreType />
     </main>
   );
 }
