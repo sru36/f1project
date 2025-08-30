@@ -8,15 +8,13 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
-import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 
 const queryClient = new QueryClient();
 
 function Layout() {
   return (
-    <div className="min-h-screen flex flex-col">
-      <Header />
+    <div className="min-h-screen flex flex-col app-frame">
       <div className="flex-1">
         <Outlet />
       </div>
