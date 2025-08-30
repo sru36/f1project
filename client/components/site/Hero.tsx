@@ -30,8 +30,8 @@ export function Hero() {
             A premium, cinematic showcase of teams, tracks and technology — fusing the elegance of future design with the raw speed of motorsport.
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
-            <a href="#teams" className="uiverse-btn"><span>Teams →</span></a>
-            <a href="#tracks" className="uiverse-btn"><span>Tracks →</span></a>
+            <a href="#teams" className="uiverse-btn"><span>Teams</span></a>
+            <a href="#tracks" className="uiverse-btn"><span>Tracks</span></a>
           </div>
         </div>
       </div>
