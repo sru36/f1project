@@ -23,19 +23,15 @@ export function Hero() {
       <div className="relative z-10 container pt-28 pb-24 md:pt-36 md:pb-36">
         <div className="max-w-4xl">
           <img src={LOGO_URL} alt="F1" className="h-14 md:h-20 w-auto drop-shadow-[0_8px_40px_rgba(225,6,0,0.35)]"/>
-          <h1 className="mt-6 font-f1 text-4xl leading-tight md:text-7xl md:leading-[1.05]">
+          <h1 className="mt-6 font-braven text-4xl leading-tight md:text-7xl md:leading-[1.05]">
             Experience the Thrill of <span className="text-primary">Formula 1</span>
           </h1>
           <p className="mt-5 text-lg text-white/80 max-w-2xl">
             A premium, cinematic showcase of teams, tracks and technology — fusing the elegance of future design with the raw speed of motorsport.
           </p>
-          <div className="mt-10 flex flex-wrap gap-3">
-            <a href="#teams" className="btn-primary">
-              Teams →
-            </a>
-            <a href="#tracks" className="btn-outline">
-              Tracks →
-            </a>
+          <div className="mt-10 flex flex-wrap gap-4">
+            <a href="#teams" className="uiverse-btn"><span>Teams →</span></a>
+            <a href="#tracks" className="uiverse-btn"><span>Tracks →</span></a>
           </div>
         </div>
       </div>
