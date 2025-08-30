@@ -1,5 +1,3 @@
-import { Section } from "./Section";
-
 const TRACKS = [
   {
     name: "Monza",
@@ -29,24 +27,37 @@ const TRACKS = [
 
 export function Tracks() {
   return (
-    <Section id="tracks" title={<span>Tracks</span>} subtitle={<span>Hover to draw the racing line and view quick stats.</span>}>
-      <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
-        {TRACKS.map((t) => (
-          <article key={t.name} className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-b from-white/[0.06] to-white/[0.02] p-6">
-            <header className="flex items-start justify-between">
-              <h3 className="font-f1 text-xl">{t.name}</h3>
-              <span className="text-xs px-2 py-1 rounded bg-white/10">{t.location}</span>
-            </header>
-            <div className="mt-4">
-              <svg viewBox="0 0 300 100" className="w-full h-28">
-                <path d={t.path} fill="none" stroke="rgba(255,255,255,0.12)" strokeWidth="6" strokeLinecap="round"/>
-                <path d={t.path} fill="none" stroke="hsl(var(--primary))" strokeWidth="4" strokeLinecap="round" className="stroke-dasharray-[1000] [stroke-dasharray:1000] [stroke-dashoffset:1000] group-hover:animate-draw"/>
-              </svg>
-            </div>
-            <p className="mt-3 text-white/70 text-sm">Laps: {t.stats.laps} • Length: {t.stats.lengthKm} km • Top speed: {t.stats.topSpeed} km/h</p>
-          </article>
-        ))}
+    <section id="tracks" className="scroll-mt-24 py-16 md:py-24 relative overflow-hidden">
+      <video className="absolute inset-0 w-full h-full object-cover opacity-30" autoPlay loop muted playsInline>
+        <source src="https://cdn.builder.io/o/assets%2F0d68dce6c99045fc980ec4bed2ae11cf%2Fd1e081a1cb834eb1b8123288097cc962?alt=media&token=6c2b21a3-3d73-4235-afcf-84d3db197e77&apiKey=0d68dce6c99045fc980ec4bed2ae11cf" type="video/mp4" />
+      </video>
+      <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(0,0,0,0.5),rgba(0,0,0,0.9))]"/>
+      <div className="container relative">
+        <header className="mb-10 md:mb-14 animate-reveal">
+          <h2 className="font-braven text-3xl md:text-5xl tracking-tight">
+            <span className="bg-gradient-to-r from-white to-white/70 bg-clip-text text-transparent">Tracks</span>
+          </h2>
+          <p className="mt-3 text-white/70 max-w-2xl">Hover to draw the racing line and view quick stats.</p>
+        </header>
+
+        <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
+          {TRACKS.map((t) => (
+            <article key={t.name} className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-b from-white/[0.06] to-white/[0.02] p-6">
+              <header className="flex items-start justify-between">
+                <h3 className="font-f1 text-xl">{t.name}</h3>
+                <span className="text-xs px-2 py-1 rounded bg-white/10">{t.location}</span>
+              </header>
+              <div className="mt-4">
+                <svg viewBox="0 0 300 100" className="w-full h-28">
+                  <path d={t.path} fill="none" stroke="rgba(255,255,255,0.12)" strokeWidth="6" strokeLinecap="round"/>
+                  <path d={t.path} fill="none" stroke="hsl(var(--primary))" strokeWidth="4" strokeLinecap="round" className="stroke-dasharray-[1000] [stroke-dasharray:1000] [stroke-dashoffset:1000] group-hover:animate-draw"/>
+                </svg>
+              </div>
+              <p className="mt-3 text-white/70 text-sm">Laps: {t.stats.laps} • Length: {t.stats.lengthKm} km • Top speed: {t.stats.topSpeed} km/h</p>
+            </article>
+          ))}
+        </div>
       </div>
-    </Section>
+    </section>
   );
 }
