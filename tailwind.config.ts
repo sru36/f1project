@@ -15,6 +15,7 @@ export default {
     extend: {
       fontFamily: {
         f1: ["Formula1 Display", "Inter", "system-ui", "sans-serif"],
+        braven: ["Braven", "Inter", "system-ui", "sans-serif"],
         sans: ["Inter", "system-ui", "sans-serif"],
       },
       colors: {
