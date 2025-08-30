@@ -16,8 +16,8 @@ export function Hero() {
 
   return (
     <section id="top" className="relative min-h-[86vh] w-full overflow-hidden">
-      <video ref={videoRef} className="absolute inset-0 h-full w-full object-cover opacity-50" autoPlay loop muted playsInline poster="/placeholder.svg">
-        {/* Replace src with the official F1 highlights video when available */}
+      <video ref={videoRef} className="absolute inset-0 h-full w-full object-cover opacity-50" autoPlay loop muted playsInline poster="/robots.txt">
+        <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4" />
       </video>
       <div className="absolute inset-0 bg-[radial-gradient(60%_60%_at_60%_40%,rgba(225,6,0,0.25),transparent)]"/>
       <div className="relative z-10 container pt-28 pb-24 md:pt-36 md:pb-36">
