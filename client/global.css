@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap");
 @import url("https://fonts.cdnfonts.com/css/formula1-display");
 
-@font-face { font-family: "Braven"; src: url("https://cdn.builder.io/o/assets%2F0d68dce6c99045fc980ec4bed2ae11cf%2F323d4fcda44b497fb37fa6e8a1818445?alt=media&token=c7fbf86f-3859-4833-b64e-83f8a996560e&apiKey=0d68dce6c99045fc980ec4bed2ae11cf") format("opentype"); font-display: swap; }
+@font-face { font-family: "Braven"; src: url("https://cdn.builder.io/o/assets%2F0d68dce6c99045fc980ec4bed2ae11cf%2F323d4fcda44b497fb37fa6e8a1818445?alt=media&token=c7fbf86f-3859-4833-b64e-83f8a996560e&apiKey=0d68dce6c99045fc980ec4bed2ae11cf") format("opentype"), url("https://cdn.builder.io/o/assets%2F0d68dce6c99045fc980ec4bed2ae11cf%2F627b68218faf43239c2648004f59dc6d?alt=media&token=df6f4a69-c765-4fe2-8165-2d595eb79d94&apiKey=0d68dce6c99045fc980ec4bed2ae11cf") format("truetype"); font-display: swap; }
 
 @tailwind base;
 @tailwind components;
@@ -104,6 +104,7 @@ html { scroll-behavior: smooth; }
     background-image: radial-gradient(1200px 600px at 10% -10%, rgba(225,6,0,0.15), transparent),
       radial-gradient(800px 400px at 90% 110%, rgba(225,6,0,0.12), transparent);
   }
+  h1, h2, h3, h4, h5, h6 { font-family: "Braven", Inter, system-ui, sans-serif; }
 
   ::selection { background: hsl(var(--primary)); color: hsl(var(--primary-foreground)); }
 }
