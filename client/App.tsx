@@ -13,9 +13,11 @@ import { Footer } from "@/components/site/Footer";
 
 const queryClient = new QueryClient();
 
+import { Cursor } from "@/components/site/Cursor";
 function Layout() {
   return (
     <div className="min-h-screen flex flex-col app-frame">
+      <Cursor />
       <div className="flex-1">
         <Outlet />
       </div>
