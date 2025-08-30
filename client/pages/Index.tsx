@@ -9,6 +9,7 @@ export default function Index() {
     <main>
       <Hero />
       <Teams />
+      <Car />
       <Tracks />
       <TyreType />
     </main>
