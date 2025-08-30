@@ -15,6 +15,7 @@ export function Header() {
   const NavLinks = ({ onClick }: { onClick?: () => void }) => (
     <ul className="flex flex-col gap-6 font-semibold">
       <li><a href="#teams" onClick={onClick} className="hover:text-primary transition-colors">Teams</a></li>
+      <li><a href="#car" onClick={onClick} className="hover:text-primary transition-colors">Car</a></li>
       <li><a href="#tracks" onClick={onClick} className="hover:text-primary transition-colors">Tracks</a></li>
       <li><a href="#tyres" onClick={onClick} className="hover:text-primary transition-colors">Tyre Type</a></li>
     </ul>
