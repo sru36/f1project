@@ -1,0 +1,27 @@
+# Server files (not needed for static deployment)
+server/
+dist/server/
+netlify/
+
+# Development files
+.env
+.env.*
+*.log
+
+# Dependencies
+node_modules/
+
+# Build artifacts
+dist/
+
+# Git
+.git/
+.gitignore
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
